@@ -3,9 +3,11 @@ import "./globals.css";
 import "./studio.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://soundbrief-video-music.wangxuanting2023.chatgpt.site"),
   title: "SoundBrief — AI Video Soundtrack Agent",
   description: "理解视频节奏，规划音乐曲线，让关键画面与 BGM 精准对齐。",
   openGraph: {
+    url: "https://soundbrief-video-music.wangxuanting2023.chatgpt.site",
     title: "SoundBrief — AI Video Soundtrack Agent",
     description: "让音乐，卡在画面最需要它的那一秒。",
     images: ["/og.png"],
