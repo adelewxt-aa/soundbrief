@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/SiteLink";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft, Check, ChevronRight, CircleCheck, Clock, Copy, Download,
@@ -27,6 +27,14 @@ const steps: { id: WorkflowStep; label: string }[] = [
 const themes = ["Soft Editorial", "Cat Studio", "Liquid Chrome", "Neon Club", "Paper Collage", "Pixel Pop"];
 const vibeOptions = ["轻快高级", "温暖松弛", "潮流科技", "克制电影感"];
 const waveform = [24,42,32,58,47,66,39,72,48,87,56,75,45,63,84,53,71,38,61,46,78,59,88,64,49,68,37,54,31,22];
+
+function readPreference(key: string) {
+  try { return localStorage.getItem(key); } catch { return null; }
+}
+
+function savePreference(key: string, value: string) {
+  try { localStorage.setItem(key, value); } catch { /* Preferences are optional. */ }
+}
 
 function Brand() {
   return <Link className="brand studio-brand" href="/"><span className="brand-mark"><i/><i/><i/></span><span>SoundBrief</span></Link>;
@@ -69,6 +77,8 @@ export default function Studio() {
   const [theme, setTheme] = useState("Soft Editorial");
   const [themeOpen, setThemeOpen] = useState(false);
   const [showThemeTip, setShowThemeTip] = useState(false);
+  const [uploadError, setUploadError] = useState("");
+  const [dragging, setDragging] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const audioRef = useRef<AudioContext | null>(null);
 
@@ -76,21 +86,24 @@ export default function Studio() {
   const activeSegment = timelineSegments.find((item) => currentTime >= item.start && currentTime < item.end) ?? timelineSegments.at(-1)!;
 
   useEffect(() => {
-    const saved = localStorage.getItem("soundbrief-theme") || "Soft Editorial";
+    const stored = readPreference("soundbrief-theme");
+    const saved = stored && themes.includes(stored) ? stored : "Soft Editorial";
     setTheme(saved);
     document.documentElement.dataset.theme = saved.toLowerCase().replaceAll(" ", "-");
-    if (!localStorage.getItem("soundbrief-theme-seen")) setShowThemeTip(true);
+    if (!readPreference("soundbrief-theme-seen")) setShowThemeTip(true);
     const params = new URLSearchParams(window.location.search);
     if (params.get("demo") === "true") setIsDemo(true);
   }, []);
 
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying || fileUrl) return;
     timerRef.current = setInterval(() => {
       setCurrentTime((value) => value >= 31.9 ? 0 : Math.min(32, value + .1));
     }, 100);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [isPlaying]);
+  }, [isPlaying, fileUrl]);
+
+  useEffect(() => () => { if (fileUrl) URL.revokeObjectURL(fileUrl); }, [fileUrl]);
 
   useEffect(() => {
     const video = document.getElementById("uploaded-video") as HTMLVideoElement | null;
@@ -102,13 +115,19 @@ export default function Studio() {
   }, [isPlaying, fileUrl]);
 
   const selectTheme = (name: string) => {
-    setTheme(name); localStorage.setItem("soundbrief-theme", name);
-    localStorage.setItem("soundbrief-theme-seen", "yes"); setShowThemeTip(false);
+    setTheme(name); savePreference("soundbrief-theme", name);
+    savePreference("soundbrief-theme-seen", "yes"); setShowThemeTip(false);
     document.documentElement.dataset.theme = name.toLowerCase().replaceAll(" ", "-");
   };
 
   const loadFile = (nextFile: File) => {
-    if (fileUrl) URL.revokeObjectURL(fileUrl);
+    if (!/\.(mp4|mov|webm)$/i.test(nextFile.name)) {
+      setUploadError("请选择 MP4、MOV 或 WebM 视频文件。"); return;
+    }
+    if (nextFile.size > 250 * 1024 * 1024) {
+      setUploadError("这个视频超过 250 MB，请先压缩后再试。"); return;
+    }
+    setUploadError(""); setIsPlaying(false);
     setFile(nextFile); setFileUrl(URL.createObjectURL(nextFile)); setIsDemo(false); setCurrentTime(0);
   };
 
@@ -178,11 +197,11 @@ export default function Studio() {
           {steps.map((item, index) => <button key={item.id} onClick={() => index <= stepIndex && setStep(item.id)} className={index === stepIndex ? "active" : index < stepIndex ? "done" : ""}><span>{index < stepIndex ? <Check size={11}/> : index + 1}</span>{item.label}</button>)}
         </div>
         <div className="studio-tools">
-          <button className="prototype-pill"><span/> Prototype mode</button>
+          <button className="prototype-pill" onClick={()=>setModal("model")}><span/> Prototype mode</button>
           <div className="theme-wrap">
-            <button className="icon-button" onClick={() => setThemeOpen(!themeOpen)} aria-label="切换主题"><Palette size={17}/></button>
+            <button className="icon-button" onClick={() => { setThemeOpen(!(themeOpen || showThemeTip)); setShowThemeTip(false); }} aria-label="切换主题" aria-expanded={themeOpen || showThemeTip}><Palette size={17}/></button>
             <AnimatePresence>{(themeOpen || showThemeTip) && <motion.div className="theme-popover" initial={{opacity:0,y:-8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}}>
-              <div className="popover-head"><div><b>Choose your creative skin.</b><span>当前：{theme}</span></div><button onClick={()=>{setThemeOpen(false);setShowThemeTip(false);localStorage.setItem("soundbrief-theme-seen","yes")}}><X size={14}/></button></div>
+              <div className="popover-head"><div><b>Choose your creative skin.</b><span>当前：{theme}</span></div><button aria-label="关闭主题面板" onClick={()=>{setThemeOpen(false);setShowThemeTip(false);savePreference("soundbrief-theme-seen","yes")}}><X size={14}/></button></div>
               <div className="theme-grid">{themes.map((name) => <button key={name} className={theme===name?"selected":""} onClick={()=>selectTheme(name)}><i className={`theme-swatch swatch-${name.toLowerCase().replaceAll(" ", "-")}`}/><span>{name}</span>{theme===name&&<Check size={12}/>}</button>)}</div>
             </motion.div>}</AnimatePresence>
           </div>
@@ -207,12 +226,17 @@ export default function Studio() {
           <AnimatePresence mode="wait">
             {step === "upload" && <motion.div key="upload" className="panel upload-panel" initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-8}}>
               <div className="panel-kicker">STEP 01 · START WITH VIDEO</div><h1>把画面交给 SoundBrief。</h1><p className="panel-lede">上传 15–60 秒视频，或用我们的 32 秒产品示例快速体验完整流程。</p>
-              <label className={`drop-zone ${file ? "has-file" : ""}`}>
-                <input type="file" accept="video/mp4,video/quicktime,video/webm" onChange={(e)=>e.target.files?.[0]&&loadFile(e.target.files[0])}/>
+              <label className={`drop-zone ${file ? "has-file" : ""} ${dragging ? "is-dragging" : ""}`}
+                onDragOver={(e)=>{e.preventDefault();setDragging(true);}}
+                onDragLeave={(e)=>{if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setDragging(false);}}
+                onDrop={(e)=>{e.preventDefault();setDragging(false);const dropped=e.dataTransfer.files[0];if(dropped)loadFile(dropped);}}>
+                <input aria-label="选择视频文件" type="file" accept=".mp4,.mov,.webm,video/mp4,video/quicktime,video/webm" onChange={(e)=>{if(e.target.files?.[0])loadFile(e.target.files[0]);e.target.value="";}}/>
                 {file ? <><CircleCheck size={28}/><b>{file.name}</b><span>{(file.size/1024/1024).toFixed(2)} MB · 本地安全预览</span></> : <><span className="upload-icon"><Upload size={24}/></span><b>拖拽视频到这里，或点击选择</b><span>MP4 / MOV / WebM · 建议 15–60 秒</span></>}
               </label>
+              {uploadError && <p className="upload-error" role="alert">{uploadError}</p>}
+              {fileUrl && <div className="upload-local-preview"><video key={fileUrl} src={fileUrl} controls playsInline preload="metadata" onError={()=>setUploadError("浏览器无法播放这个视频编码，请改用 H.264 MP4 或 WebM。")}/><span>已载入本地视频 · 文件不会上传到服务器</span></div>}
               <div className="or-line"><span>或者</span></div>
-              <button className="sample-button" onClick={()=>{setIsDemo(true);setFile(null);setFileUrl("");}}><span className="sample-thumb"><i/></span><span><b>使用示例视频</b><small>32s · 竖屏产品短片 · 无需上传</small></span>{isDemo?<CircleCheck className="sample-check" size={20}/>:<ChevronRight size={18}/>}</button>
+              <button className="sample-button" aria-pressed={isDemo} onClick={()=>{setIsDemo(true);setFile(null);setFileUrl("");setUploadError("");setIsPlaying(false);setCurrentTime(12.4);}}><span className="sample-thumb"><i/></span><span><b>{isDemo ? "已选择示例视频" : "使用示例视频"}</b><small>32s · 竖屏产品短片 · 无需上传</small></span>{isDemo?<CircleCheck className="sample-check" size={20}/>:<ChevronRight size={18}/>}</button>
               <div className="brief-inputs"><label><span>你希望音乐给人什么感觉？</span><textarea value={userBrief} onChange={(e)=>setUserBrief(e.target.value)} /></label><div className="vibe-row">{vibeOptions.map((item)=><button key={item} onClick={()=>setVibe(item)} className={vibe===item?"active":""}>{item}</button>)}</div></div>
               <button disabled={!canAnalyze} className="primary-action" onClick={()=>runAnalysis()}><Sparkles size={16}/> 分析视频并规划音乐 <ChevronRight size={16}/></button>
             </motion.div>}

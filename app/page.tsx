@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/SiteLink";
 
 const bars = [18, 32, 24, 46, 36, 58, 44, 70, 54, 82, 64, 42, 58, 76, 48, 66, 38, 52, 28, 20];
 
