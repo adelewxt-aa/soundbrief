@@ -32,6 +32,7 @@ export default function StoryStudio() {
   const [exporting, setExporting] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [volume, setVolume] = useState(.9);
+  const [audioUrl, setAudioUrl] = useState<string>();
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const themeDialog = useRef<HTMLDialogElement>(null);
@@ -39,6 +40,7 @@ export default function StoryStudio() {
   const playAfterTrack = useRef(false);
   const musicVersion: TrackVersion = trackId === "original" ? "a" : trackId;
   const track = example.tracks.find(item => item.id === musicVersion)!;
+  const audioPath = mediaPath(example.id, `${musicVersion}.mp3`);
   const videoUrl = file?.url || mediaPath(example.id, "video.webm");
   const scenes = useMemo(() => example.scenes.map(scene => ({ ...scene, start: scene.start / 30 * duration, end: scene.end / 30 * duration })), [example, duration]);
   const sceneIndex = scenes.findIndex(scene => time >= scene.start && time < scene.end);
@@ -53,6 +55,20 @@ export default function StoryStudio() {
     try { const saved = localStorage.getItem("soundbrief-theme"); if (saved && themes.includes(saved)) setTheme(saved); } catch { /* Optional preference. */ }
   }, []);
   useEffect(() => () => { if (file) URL.revokeObjectURL(file.url); }, [file]);
+  useEffect(() => {
+    const controller = new AbortController();
+    let objectUrl: string | undefined;
+    setAudioUrl(undefined);
+    // A complete, typed Blob remains seekable even when a host omits byte-range support.
+    void fetch(audioPath, { signal: controller.signal }).then(async response => {
+      if (!response.ok) throw new Error("配乐未能载入，请刷新后重试。");
+      const bytes = await response.arrayBuffer();
+      if (controller.signal.aborted) return;
+      objectUrl = URL.createObjectURL(new Blob([bytes], { type: "audio/mpeg" }));
+      setAudioUrl(objectUrl);
+    }).catch(error => { if (!controller.signal.aborted) setMediaError(error instanceof Error ? error.message : "配乐未能载入，请重试。"); });
+    return () => { controller.abort(); if (objectUrl) URL.revokeObjectURL(objectUrl); };
+  }, [audioPath]);
   useEffect(() => { setPlaying(false); setTime(0); setMediaError(""); audioRef.current?.pause(); }, [videoUrl]);
   useEffect(() => {
     const audio = audioRef.current;
@@ -76,8 +92,8 @@ export default function StoryStudio() {
   }
   function startMusic() {
     const video = videoRef.current, audio = audioRef.current;
-    if (!video || !audio || trackId === "original" || video.paused || video.readyState < 2 || !Number.isFinite(video.duration)) return;
-    syncMusic(true);
+    if (!video || !audio || !audioUrl || trackId === "original" || video.paused || video.readyState < 2 || audio.readyState < 2 || !Number.isFinite(video.duration)) return;
+    syncMusic();
     void audio.play().catch(() => setMediaError("配乐未能播放，请再点一次播放，或刷新后重试。"));
   }
   function chooseTrack(id: TrackVersion | "original") {
@@ -206,14 +222,14 @@ export default function StoryStudio() {
           setDuration(length); setMix(previous => ({ ...previous, peakAt: Math.min(length - 1, previous.peakAt) })); syncMusic(true);
           if (playAfterLoad.current) { playAfterLoad.current = false; void togglePlay(); }
         }} onTimeUpdate={event => { setTime(event.currentTarget.currentTime); syncMusic(); }} onSeeking={() => syncMusic(true)} onPlay={() => { setPlaying(true); startMusic(); }} onPlaying={startMusic} onPause={() => { setPlaying(false); audioRef.current?.pause(); }} onWaiting={() => audioRef.current?.pause()} onEnded={() => { setPlaying(false); audioRef.current?.pause(); }} onError={() => setMediaError("视频未能加载。请重试；本地文件建议转为 H.264 编码的 MP4。")} onClick={togglePlay}/>{!playing && <button className="sb-big-play" onClick={togglePlay} aria-label="播放视频与配乐"><Play size={26} fill="currentColor"/></button>}<span className="sb-video-badge">{file ? "本地预览" : "MOTION STORY"}</span></div>
-        <audio ref={audioRef} src={mediaPath(example.id, `${musicVersion}.mp3`)} preload="auto" onLoadedMetadata={() => { syncMusic(true); startMusic(); }} onError={() => setMediaError("配乐文件未能加载，请检查网络后重试。")}/>
+        <audio ref={audioRef} src={audioUrl} preload="auto" onLoadedMetadata={() => { syncMusic(true); startMusic(); }} onCanPlay={startMusic} onError={() => { if (audioUrl) setMediaError("配乐文件未能加载，请检查网络后重试。"); }}/>
         <div className="sb-transport"><button onClick={togglePlay} aria-label={playing ? "暂停" : "播放"}>{playing ? <Pause size={17}/> : <Play size={17}/>}</button><span>{stamp(time)}</span><input type="range" aria-label="视频进度" min="0" max={duration} step=".05" value={Math.min(time, duration)} onChange={event => seek(Number(event.target.value))}/><span>{stamp(duration)}</span></div>
         <div className="sb-ab-switch" aria-label="试听音轨">{(["original", "a", "b"] as const).map(id => <button key={id} className={trackId === id ? "active" : ""} aria-pressed={trackId === id} onClick={() => chooseTrack(id)}>{id === "original" ? "仅视频" : `${id.toUpperCase()} · ${example.tracks[id === "a" ? 0 : 1].name}`}</button>)}</div>
         <label className="sb-volume"><Volume2 size={15}/><span>试听音量</span><input aria-label="试听音量" type="range" min="0" max="1" step=".05" value={volume} onChange={event => setVolume(Number(event.target.value))}/></label>
         {mediaError && <p className="sb-media-error" role="alert">{mediaError}</p>}
         <div className="sb-now-note"><small>{stamp(time)} · {file ? "示例音乐的段落参考" : "这一秒，音乐在做什么？"}</small><p>{trackId === "original" ? file ? "当前只播放视频自己的声音。选 A / B 可以试配示例音乐。" : "这支示例原片没有原声。选 A / B，就能听到完整配乐。" : (musicVersion === "a" ? scenes[activeScene].musicA : scenes[activeScene].musicB)}</p></div>
         <div className="sb-energy"><div><strong>配乐强弱安排</strong><span>编曲示意 · 非音频检测</span></div><svg viewBox="0 0 300 72" role="img" aria-label="各段落配乐强弱示意"><path d="M0 60H300" stroke="currentColor" opacity=".12"/><polyline points={scenes.map(scene => `${(scene.start + scene.end) / 2 / duration * 300},${65 - (musicVersion === "a" ? scene.energyA : scene.energyB) * .54 * mixGain((scene.start + scene.end) / 2, duration, mix) / .7}`).join(" ")} fill="none" stroke="var(--accent)" strokeWidth="2.5" strokeLinejoin="round"/><line x1={time / duration * 300} x2={time / duration * 300} y1="5" y2="66" stroke="currentColor" strokeDasharray="3 3" opacity=".5"/></svg><div className="sb-scene-markers">{scenes.map((scene, index) => <button key={index} onClick={() => seek(scene.start)} className={activeScene === index ? "active" : ""}>{stamp(scene.start)}</button>)}</div></div>
-        <p className="sb-preview-footnote">{file ? "本地预览 · 手动计划 · 示例音乐试配" : "预制内容，真实播放 · 不调用付费 API"}</p>
+        <p className="sb-preview-footnote" role="status">{!audioUrl ? "配乐载入中，稍后会对齐当前画面…" : file ? "本地预览 · 手动计划 · 示例音乐试配" : "预制内容，真实播放 · 不调用付费 API"}</p>
       </aside>
     </main>
     <div className="sb-bottom-note"><span>SoundBrief / Let music understand your story.</span><a href="/media/CREDITS.md" target="_blank" rel="noreferrer">示例素材与能力说明</a></div>
