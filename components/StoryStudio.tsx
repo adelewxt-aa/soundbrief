@@ -5,7 +5,7 @@ import Link from "@/components/SiteLink";
 import { ArrowLeft, ArrowRight, Check, ChevronRight, Download, FileJson, Film, Headphones, Info, Music2, Palette, Pause, Play, RotateCcw, SlidersHorizontal, Sparkles, Upload, Volume2, X } from "lucide-react";
 import { examples, mediaPath, workflow, type TrackVersion } from "@/lib/examples";
 import { downloadBlob, mixGain, renderAdjustedWav, type MixSettings } from "@/lib/audio-mix";
-import { AppearancePicker, Ragdoll, useAppearance } from "@/components/Companion";
+import { AppearancePicker, CatAvatar, useAppearance } from "@/components/Companion";
 import { DirectionLibrary, ModelPlanner, RevisionPlanner, VideoPreferences } from "@/components/CreativeWorkspace";
 import { directions, initialPlan, type ImportedTrack, type Revision } from "@/lib/creative-plan";
 
@@ -200,7 +200,7 @@ export default function StoryStudio() {
     <nav className="sb-steps" aria-label="配乐制作步骤">{workflow.map((item, index) => <button key={item.title} className={step === index ? "active" : step > index ? "complete" : ""} aria-current={step === index ? "step" : undefined} onClick={() => go(index)}><span className="sb-step-number">{step > index ? <Check size={15}/> : index + 1}</span><span><strong>{item.title}</strong><small>{item.description}</small></span>{index < 5 && <ChevronRight className="sb-step-arrow" size={15}/>}</button>)}</nav>
     <main className="sb-layout">
       <section className="sb-workspace">
-        <div className="studio-companion">{theme === "Cat Studio" && <Ragdoll pose={step === 2 ? 1 : step === 5 ? 3 : appearance.outfit}/>}<div><p>{["把视频交给我吧，我们先看看它的故事。","最想让观众记住哪一秒？我们一起把它找出来。","先告诉我更在意什么，我把选择替你摆清楚。","我准备了四种创作方向，你也可以带着喜欢的音乐来试。","哪里还差一点点？告诉我，我们再调一调。","把喜欢的声音和创作想法，一起带走吧。"][step]}</p><small>当前：计划编辑、旧版示例试听与本地音频试配</small></div></div>
+        <div className="studio-companion"><CatAvatar cat={appearance.cat} pose={step === 2 ? 1 : step === 5 ? 3 : appearance.outfit}/><div><p>{["把视频交给我吧，我们先看看它的故事。","最想让观众记住哪一秒？我们一起把它找出来。","先告诉我更在意什么，我把选择替你摆清楚。","我准备了四种创作方向，你也可以带着喜欢的音乐来试。","哪里还差一点点？告诉我，我们再调一调。","把喜欢的声音和创作想法，一起带走吧。"][step]}</p><small>当前：计划编辑、旧版示例试听与本地音频试配</small></div></div>
         <div className="sb-section-heading"><span className="sb-eyebrow">STEP {String(step + 1).padStart(2, "0")} / 06</span><h1>{workflow[step].heading}</h1><p>{workflow[step].help}</p></div>
         {step === 0 && <>
           <div className="sb-source-tabs"><button className={sourceTab === "examples" ? "active" : ""} onClick={() => setSourceTab("examples")}><Film size={16}/>先用示例试试</button><button className={sourceTab === "upload" ? "active" : ""} onClick={() => setSourceTab("upload")}><Upload size={16}/>上传我的视频</button></div>
@@ -260,7 +260,7 @@ export default function StoryStudio() {
         <div className="sb-status" role="status" aria-live="polite">{message}</div>
         <footer className="sb-step-footer"><button disabled={step === 0} onClick={() => go(step - 1)}><ArrowLeft size={15}/>上一步</button><span>{step + 1} / 6</span>{step < 5 ? <button className="sb-primary" onClick={() => go(step + 1)}>{["看看画面怎么安排", "选模型和配乐方向", "去比较几种感觉", "再调一点细节", "保存这一版"][step]}<ArrowRight size={16}/></button> : <Link href="/" className="sb-text-button">回到首页<ArrowRight size={16}/></Link>}</footer>
       </section>
-      <aside className="sb-preview"><Ragdoll pose={2} className="cat-corner" label="小猫陪你试听"/><div className="sb-preview-heading"><span><span className="sb-live-dot"/>同步试听</span><small>{file ? "本地视频" : "旧版 30 秒示例"}</small></div>
+      <aside className="sb-preview"><CatAvatar cat={appearance.cat} pose={2} className="cat-corner" label={`${appearance.cat.name}陪你试听`}/><div className="sb-preview-heading"><span><span className="sb-live-dot"/>同步试听</span><small>{file ? "本地视频" : "旧版 30 秒示例"}</small></div>
         <div className="sb-video-wrap"><video ref={videoRef} src={videoUrl} poster={file ? undefined : mediaPath(example.id, "poster.jpg")} playsInline preload="metadata" muted={trackId !== "original"} onLoadedMetadata={event => {
           const length = event.currentTarget.duration;
           if (!Number.isFinite(length) || length <= 0 || (file && (length < 15 || length > 60))) { setFile(null); setDuration(30); setTrackId("a"); setMessage("请选择 15–60 秒的视频。本次文件未载入，已回到示例。"); return; }

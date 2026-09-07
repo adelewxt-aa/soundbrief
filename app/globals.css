@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 :root { --ink:#171715; --paper:#f4f1e9; --orange:#ff5c35; --purple:#6657f5; }
+.sb-app[data-theme=siamese-studio]{--studio-bg:#fff8ef;--surface:#fffdf9;--surface-2:#f5e8d7;--ink:#443426;--muted:#7b6652;--accent:#9b5c25;--accent-soft:#f8e5ce;--line:#e8d6bf;--radius:22px}
+.sb-app[data-theme=maine-studio]{--studio-bg:#f1f6f0;--surface:#fcfefb;--surface-2:#e0eade;--ink:#263d2e;--muted:#5d7161;--accent:#38674e;--accent-soft:#e0eee3;--line:#cddcce;--radius:22px}
+.sb-app[data-theme=calico-studio]{--studio-bg:#fff5f1;--surface:#fffdfb;--surface-2:#f7e6df;--ink:#49302c;--muted:#81645c;--accent:#b54d47;--accent-soft:#f9e1da;--line:#ecd2c9;--radius:22px}
+.sb-app[data-theme=cloud-studio]{--studio-bg:#f2f8ff;--surface:#fdfeff;--surface-2:#e3eef8;--ink:#273e52;--muted:#60768b;--accent:#366d9d;--accent-soft:#dfedf9;--line:#ccdfee;--radius:22px}
+.sb-app[data-theme=oreo-studio]{--studio-bg:#fff4f8;--surface:#fffcfe;--surface-2:#f6e3ec;--ink:#482b3a;--muted:#806173;--accent:#a64670;--accent-soft:#f8e0eb;--line:#e9cddc;--radius:22px}
 * { box-sizing:border-box; }
 html { background:var(--paper); color:var(--ink); }
 body { margin:0; font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif; background:var(--paper); }
