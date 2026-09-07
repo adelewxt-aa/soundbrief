@@ -37,7 +37,7 @@ export function CatAvatar({ cat = defaultCat, pose = 0, className = "", label }:
   const selected = validPose(pose) ? pose : 0;
   const [x, y, width, height] = cat.crops?.[selected] || [(selected % 2) / 2, Math.floor(selected / 2) / 2, .5, .5];
   const description = label ?? `${cat.name}，${cat.breed}，${cat.poses[selected]}`;
-  return <span className={`ragdoll ${!["ragdoll", "siamese"].includes(cat.id) ? "cat-blended-art" : ""} ${className}`} role={description ? "img" : undefined} aria-label={description || undefined} aria-hidden={!description} style={{ aspectRatio: `${width}/${height}` }}><img src={`/media/companion/${cat.image}`} alt="" style={{ width: `${100 / width}%`, height: `${100 / height}%`, left: `${-x / width * 100}%`, top: `${-y / height * 100}%` }}/></span>;
+  return <span className={`ragdoll ${!["ragdoll", "siamese"].includes(cat.id) ? "cat-blended-art" : ""} ${className}`} role={description ? "img" : undefined} aria-label={description || undefined} aria-hidden={!description} style={{ aspectRatio: `${width}/${height}`, "--cat-ratio": width / height } as React.CSSProperties}><img src={`/media/companion/${cat.image}`} alt="" style={{ width: `${100 / width}%`, height: `${100 / height}%`, left: `${-x / width * 100}%`, top: `${-y / height * 100}%` }}/></span>;
 }
 
 export function AppearancePicker({ theme, cat, outfit, poses, changeTheme, changeOutfit }: ReturnType<typeof useAppearance>) {
