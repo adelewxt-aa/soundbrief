@@ -4,7 +4,8 @@
 .welcome .art-small-label{position:static;justify-self:end;transform:none;margin:0 12px 0 0;line-height:1.6}
 .welcome .cat-bubble{position:relative;inset:auto;justify-self:start;max-width:calc(100% - 16px);margin:4px 8px 0;transform:rotate(-2deg);line-height:1.7;font-size:14px;padding:12px 16px;z-index:auto}
 .welcome .cat-bubble svg{flex-shrink:0}
-.welcome .cat-display-stage{position:relative;height:330px;display:grid;place-items:center;isolation:isolate;min-width:0}
+.welcome .cat-display-stage{position:relative;height:330px;display:grid;place-items:center;isolation:isolate;min-width:0;background:var(--studio-bg)}
+.welcome .hero-ragdoll.cat-blended-art{filter:none}
 .welcome .cat-display-stage .welcome-orbit{inset:10px 5% 0;border-radius:50%;z-index:-1}
 .welcome .hero-ragdoll{position:relative;inset:auto;transform:none;width:min(340px,90%,calc(320px * var(--cat-ratio)));max-width:none;justify-self:center;align-self:center}
 .welcome .floating-story{display:flex;position:relative;inset:auto;justify-self:end;z-index:auto;transform:rotate(2deg);margin:0 10px 8px;padding:12px 16px;max-width:calc(100% - 20px)}
