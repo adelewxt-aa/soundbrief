@@ -8,11 +8,14 @@ import { downloadBlob, mixGain, renderAdjustedWav, type MixSettings } from "@/li
 import { AppearancePicker, CatAvatar, useAppearance } from "@/components/Companion";
 import { DirectionLibrary, ModelPlanner, RevisionPlanner, VideoPreferences } from "@/components/CreativeWorkspace";
 import { directions, initialPlan, type ImportedTrack, type Revision } from "@/lib/creative-plan";
+import CatFilmStudio from "@/components/CatFilmStudio";
 
 const stamp = (seconds: number) => `${Math.floor(seconds / 60).toString().padStart(2, "0")}:${Math.floor(seconds % 60).toString().padStart(2, "0")}`;
 const defaults = (peakAt: number): MixSettings => ({ opening: 1, peak: 1, ending: 1, peakAt });
 
-export default function StoryStudio() {
+export default function StoryStudio() { return <CatFilmStudio/>; }
+
+function LegacyStoryStudio() {
   const [exampleId, setExampleId] = useState("brand");
   const example = examples.find(item => item.id === exampleId) || examples[0];
   const [step, setStep] = useState(0);
