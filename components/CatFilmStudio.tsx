@@ -161,4 +161,3 @@ export default function CatFilmStudio() {
     <div className="sb-bottom-note"><span>SoundBrief · 陪你的故事，找到声音。</span><a href="/media/cat-films/CREDITS.md">示例来源与能力说明</a></div>
   </div>;
 }
-

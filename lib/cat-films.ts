@@ -15,4 +15,3 @@ export const sampleSteps = [
   { title: "继续修改", description: "记录想法，调整音量", heading: "喜欢的留下，再调一点点。", help: "可以记录分段修改要求；导入独立音乐后可实际调整音量。局部重生成尚未接入。" },
   { title: "保存结果", description: "视频与创作计划", heading: "把这一版，带走。", help: "下载示例成片的网页播放版与创作计划；导入音乐的修改结果可导出 WAV，合成新视频需在剪辑工具完成。" },
 ];
-

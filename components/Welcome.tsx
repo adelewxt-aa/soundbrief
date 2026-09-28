@@ -18,4 +18,3 @@ export default function Welcome() {
     <section className="welcome-price"><CatAvatar cat={appearance.cat} pose={1}/><div><span className="welcome-eyebrow">每一次创作，都心里有数</span><h2>先选感觉，再看费用。</h2><p>按官方参考价、视频时长和版本数预估，含拟定服务费。<br/>当前原型不收费，正式价格将在模型测试后确定。</p></div><Link className="new-primary" href="/studio?upload=true">带着我的视频试试 <ArrowRight size={18}/></Link></section></main><footer className="welcome-footer"><span>SoundBrief · 陪你的故事，找到声音。</span><a href="/media/CREDITS.md">素材与体验说明</a><span>Made with a little curiosity ♡</span></footer>
   </div>;
 }
-
