@@ -54,7 +54,9 @@
 
 - 围绕短视频创作者“找音乐耗时、音乐不贴画面”的问题，搭建 SoundBrief 首版，探索从视频需求出发的配乐体验。
 
-最近的界面整理（2026-09-16）：修复示例封面超出卡片、优化文字可读性，补充项目说明。卡片修复已通过本地构建检查，尚未完成本次网站发布。
+最近的界面整理（2026-09-16）：修复示例封面超出卡片、优化文字可读性，补充项目说明。修复已于 2026-09-17 发布，网站已开放公开访问。
+
+在线体验：[SoundBrief](https://soundbrief-video-music.wangxuanting2023.chatgpt.site/)。国内不同网络的访问情况仍需实际测试。
 
 代码仓库：[adelewxt-aa/soundbrief](https://github.com/adelewxt-aa/soundbrief)。代码同步与网站部署是两个独立步骤，仓库地址不是网站体验地址。
 
@@ -73,7 +75,9 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-构建：`pnpm build`。当前技术栈为 React、Next.js 组件结构、TypeScript 和 Vinext，发布配置面向 Workers；迁移到其他云平台需要适配，不能直接假设上传即可运行。
+构建：`pnpm build`。Windows 上如果 Vinext 开发服务无法启动，可以用 `pnpm exec next dev` 预览（本项目已验证此方式）；正式发布仍使用 Vinext 构建。
+
+换电脑请阅读 [上传与恢复说明](UPLOAD_AND_RESTORE.md)，让新的 Codex 任务先读 [项目交接说明](CONTINUE_HERE.md)。当前技术栈为 React、Next.js 组件结构、TypeScript 和 Vinext，发布配置面向 Workers；迁移到其他云平台需要适配。
 
 ## 素材与安全
 

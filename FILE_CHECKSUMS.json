@@ -1,0 +1,610 @@
+{
+  "description": "SoundBrief migration snapshot; excludes this manifest itself.",
+  "date": "2026-09-28",
+  "files": [
+    {
+      "file": ".gitignore",
+      "bytes": 412,
+      "sha256": "24d93d0f394fc78e42d0df006d9d89e35bcb253a237782f1a3d4315b2f145253",
+      "sha256Lf": "24d93d0f394fc78e42d0df006d9d89e35bcb253a237782f1a3d4315b2f145253"
+    },
+    {
+      "file": ".openai/hosting.json",
+      "bytes": 91,
+      "sha256": "58c2467e224b99273fb283059851523085a00ef4c4fee07a935585c8ded0406b",
+      "sha256Lf": "58c2467e224b99273fb283059851523085a00ef4c4fee07a935585c8ded0406b"
+    },
+    {
+      "file": "CONTINUE_HERE.md",
+      "bytes": 4143,
+      "sha256": "ba3ca9a8692a3ee1f32449fa4a80d7c53946e419aabf73c2399dab8fa81a5dbf",
+      "sha256Lf": "ba3ca9a8692a3ee1f32449fa4a80d7c53946e419aabf73c2399dab8fa81a5dbf"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5317,
+      "sha256": "82c73294557ac6daba26b8bbb1d1d23b0bdcedf635716d63ace9a2f07ed3ea4c",
+      "sha256Lf": "82c73294557ac6daba26b8bbb1d1d23b0bdcedf635716d63ace9a2f07ed3ea4c"
+    },
+    {
+      "file": "UPLOAD_AND_RESTORE.md",
+      "bytes": 2162,
+      "sha256": "64811522c53704a306734f4996684769b2f7ee5085653bd7b816da2b0b092d3c",
+      "sha256Lf": "64811522c53704a306734f4996684769b2f7ee5085653bd7b816da2b0b092d3c"
+    },
+    {
+      "file": "app/companion.css",
+      "bytes": 34393,
+      "sha256": "47adaa6f75284a32c572c4cc3abc2ad6a64ae540f3256cc2e83554dc96c17b69",
+      "sha256Lf": "14b2f3fcbec6cb5636a52dcab684880f6661e3897c6a7a865bc9fdc5360b0c66"
+    },
+    {
+      "file": "app/globals.css",
+      "bytes": 19405,
+      "sha256": "37bbcc84e9cc7534c6fe54ffe3bfe8f6fe85e68d0661a5517b2d1835e6f2750f",
+      "sha256Lf": "37bbcc84e9cc7534c6fe54ffe3bfe8f6fe85e68d0661a5517b2d1835e6f2750f"
+    },
+    {
+      "file": "app/layout.tsx",
+      "bytes": 1097,
+      "sha256": "1aeef3da0336a320bacad07fc92af57c019c5b886d315b9885fc1d7625a1f4bc",
+      "sha256Lf": "1aeef3da0336a320bacad07fc92af57c019c5b886d315b9885fc1d7625a1f4bc"
+    },
+    {
+      "file": "app/page.tsx",
+      "bytes": 98,
+      "sha256": "cd3d06fe12002478d42f381cc6142a1a50c734c7738610399a3b252629a4e2fe",
+      "sha256Lf": "cd3d06fe12002478d42f381cc6142a1a50c734c7738610399a3b252629a4e2fe"
+    },
+    {
+      "file": "app/story-studio.css",
+      "bytes": 26604,
+      "sha256": "ce24edae0e7a7a73ec30b97efe7a33f2770d803cb1a579a51b0fab0f4eee7b54",
+      "sha256Lf": "ce24edae0e7a7a73ec30b97efe7a33f2770d803cb1a579a51b0fab0f4eee7b54"
+    },
+    {
+      "file": "app/studio.css",
+      "bytes": 23425,
+      "sha256": "2870ba4885657074dc9be7b1d0d3f283b5b520295825c3d6baf8a1ab635bc1ff",
+      "sha256Lf": "2870ba4885657074dc9be7b1d0d3f283b5b520295825c3d6baf8a1ab635bc1ff"
+    },
+    {
+      "file": "app/studio/page.tsx",
+      "bytes": 110,
+      "sha256": "2537d33354ced9aa9fecdadf42464d2915e9cff8c7db4564fd8b7b1f7928b05d",
+      "sha256Lf": "2537d33354ced9aa9fecdadf42464d2915e9cff8c7db4564fd8b7b1f7928b05d"
+    },
+    {
+      "file": "archive/README.md",
+      "bytes": 779,
+      "sha256": "4b707434b7e646f096ed4c6b21d2fb3a4edca159dd2870dbf83ebc3291e601eb",
+      "sha256Lf": "4b707434b7e646f096ed4c6b21d2fb3a4edca159dd2870dbf83ebc3291e601eb"
+    },
+    {
+      "file": "archive/early-video-drafts/jimeng-2026-09-11-3132-以参考图片中的布偶猫“绵绵”为唯一主角，保持蓝眼睛、脸部花纹和蓬松毛发一致。生成....mp4",
+      "bytes": 7279177,
+      "sha256": "d576fc77f7a69b49b7204b978e11e219f5d6ab0c5c8d6900170af058c6cc8c87"
+    },
+    {
+      "file": "archive/early-video-drafts/jimeng-2026-09-14-3544-以参考图中的布偶猫“绵绵”为唯一主角，保持脸型、蓝眼睛、毛色花纹和蓬松长毛一致。....mp4",
+      "bytes": 16374924,
+      "sha256": "a0fcfe0c6e0610be0371ba5392feedf28b48aaa621c570b3b8b2aa1c09700261"
+    },
+    {
+      "file": "archive/early-video-drafts/jimeng-2026-09-14-8814-以参考图中的三花猫“花卷”为唯一主角，保持脸型、三花毛色分布和体型一致。制作15....mp4",
+      "bytes": 17562488,
+      "sha256": "3ed1b93d38e2e20d4368034bb86204f736304e3e5a46e7edc4d599d47b1a5a71"
+    },
+    {
+      "file": "archive/exported-projects/SoundBrief-brand-a-adjusted.wav",
+      "bytes": 5292044,
+      "sha256": "96793419cb9dc91278fbf48f331c683ef36262d8a9bf154c5efd4969becd9f60"
+    },
+    {
+      "file": "archive/exported-projects/SoundBrief-brand-project.json",
+      "bytes": 2993,
+      "sha256": "cee1f67cd8c59c304d5744ff65dba492536bc3a09f16ba5d3cd0f8e9098e0a29",
+      "sha256Lf": "cee1f67cd8c59c304d5744ff65dba492536bc3a09f16ba5d3cd0f8e9098e0a29"
+    },
+    {
+      "file": "archive/exported-projects/soundbrief-project (1).json",
+      "bytes": 1974,
+      "sha256": "e904bf9af61948f2e5282de7e5250f7c302fff55b4cfd42712033d9ce64d2106",
+      "sha256Lf": "e904bf9af61948f2e5282de7e5250f7c302fff55b4cfd42712033d9ce64d2106"
+    },
+    {
+      "file": "archive/exported-projects/soundbrief-project.json",
+      "bytes": 1974,
+      "sha256": "e904bf9af61948f2e5282de7e5250f7c302fff55b4cfd42712033d9ce64d2106",
+      "sha256Lf": "e904bf9af61948f2e5282de7e5250f7c302fff55b4cfd42712033d9ce64d2106"
+    },
+    {
+      "file": "archive/original-videos/三花-花卷.mp4",
+      "bytes": 13782255,
+      "sha256": "11432b9ead0ad9bc0952fcf101ea32e97a39ec4217efadb9a61dc9fb1683395a"
+    },
+    {
+      "file": "archive/original-videos/奶牛-奥利奥.mp4",
+      "bytes": 11787078,
+      "sha256": "9f42f87109231f52fb9db18a588c9775beb983876784c6becb60a79f613ea793"
+    },
+    {
+      "file": "archive/original-videos/布偶-绵绵.mp4",
+      "bytes": 23343658,
+      "sha256": "3b0b793d2a3873a758491e5a824359c72028a9a7ae7b9b6104317797917d657e"
+    },
+    {
+      "file": "archive/original-videos/暹罗-摩卡.mp4",
+      "bytes": 22347743,
+      "sha256": "4f596330b2ffab026f726d60919432cd4350d46f32c33a5a23cb591351ac737a"
+    },
+    {
+      "file": "archive/original-videos/缅因-松松.mp4",
+      "bytes": 20636923,
+      "sha256": "6efcd7b6ba98210067d3465f43ec6d6c2992264e10027ae0bfa1d4caeaf3b181"
+    },
+    {
+      "file": "archive/original-videos/长毛-云朵.mp4",
+      "bytes": 12177932,
+      "sha256": "63f6d860ca7cf4e4ff4a2f391ef2728bc9d840f5d134f02a414147856b8173f6"
+    },
+    {
+      "file": "components/CatFilmCard.tsx",
+      "bytes": 352,
+      "sha256": "3242794cb1ef42f1d1d47ad22417624982f04000fa37f15825469bdfb59a1d95",
+      "sha256Lf": "3242794cb1ef42f1d1d47ad22417624982f04000fa37f15825469bdfb59a1d95"
+    },
+    {
+      "file": "components/CatFilmStudio.tsx",
+      "bytes": 22160,
+      "sha256": "cdbcfd9e707ebd24541d14264d4f820bbd0f70d9727e2fff0c76a76a69343d07",
+      "sha256Lf": "aba1659440e77100f5d625e69ea25e4b4cad7aa76ffd6ff0346347549486994a"
+    },
+    {
+      "file": "components/Companion.tsx",
+      "bytes": 5157,
+      "sha256": "e959d3cad9efad30a8493d9405c069f85a55a2c1b5d3e536082746fb7df1826d",
+      "sha256Lf": "e959d3cad9efad30a8493d9405c069f85a55a2c1b5d3e536082746fb7df1826d"
+    },
+    {
+      "file": "components/CreativeWorkspace.tsx",
+      "bytes": 8006,
+      "sha256": "a764f7548df9fb894f48388c7d53e0eecfc62ebbc2e883b9864c4deb8e3fc59c",
+      "sha256Lf": "9b91147e36a66a61e2c4472a7d23fc15c077488531f219d38d12c21601310932"
+    },
+    {
+      "file": "components/ModelPlanner.tsx",
+      "bytes": 7498,
+      "sha256": "5e480598c6209b35c0224803ddeb2268e71443baaeb29b8dd9e879afb56606ac",
+      "sha256Lf": "7ac0b4a47a9d53f361615779833697fc09ee3d4ecc063e1b9d5e34be60ef11c9"
+    },
+    {
+      "file": "components/SiteLink.tsx",
+      "bytes": 370,
+      "sha256": "ea576200f7e1002cd713409f8e55396afc1f0bb10bedda1a8b2ec0601f4b368b",
+      "sha256Lf": "ea576200f7e1002cd713409f8e55396afc1f0bb10bedda1a8b2ec0601f4b368b"
+    },
+    {
+      "file": "components/StoryStudio.tsx",
+      "bytes": 35649,
+      "sha256": "978cf322b1c564c7b375a8e352a9a2a9470130b1ec4a8890a94ed0b042bdc777",
+      "sha256Lf": "978cf322b1c564c7b375a8e352a9a2a9470130b1ec4a8890a94ed0b042bdc777"
+    },
+    {
+      "file": "components/Studio.tsx",
+      "bytes": 30074,
+      "sha256": "4c34a817dfd6293d66874f991f7fb73a6b445d8781047fc79863c386e6568b1d",
+      "sha256Lf": "4c34a817dfd6293d66874f991f7fb73a6b445d8781047fc79863c386e6568b1d"
+    },
+    {
+      "file": "components/Welcome.tsx",
+      "bytes": 6742,
+      "sha256": "2ac42a65419de47e07cf06b629daaa965957c3accaf9a2f2fe7d96d6f7d84b22",
+      "sha256Lf": "dca64685ae57a7273d2d7f215b61ce984791453ec0de82801069de08d65cc109"
+    },
+    {
+      "file": "eslint.config.mjs",
+      "bytes": 345,
+      "sha256": "5c697206f302dadc0c8b7b2f7a707257dab15129a2149872b0f84ea1ac17d263",
+      "sha256Lf": "5c697206f302dadc0c8b7b2f7a707257dab15129a2149872b0f84ea1ac17d263"
+    },
+    {
+      "file": "lib/audio-mix.ts",
+      "bytes": 2533,
+      "sha256": "c5a3f54c2b7fe5f1e3f1ca63220d7d82c2cb60cbd444c5cc3de0d7fd1ca17779",
+      "sha256Lf": "c5a3f54c2b7fe5f1e3f1ca63220d7d82c2cb60cbd444c5cc3de0d7fd1ca17779"
+    },
+    {
+      "file": "lib/cat-companions.ts",
+      "bytes": 3150,
+      "sha256": "fbcf525438a07f67d4f64fcc2a7e4f81bb32b84ec57ac17af2c82ae1529904fc",
+      "sha256Lf": "fbcf525438a07f67d4f64fcc2a7e4f81bb32b84ec57ac17af2c82ae1529904fc"
+    },
+    {
+      "file": "lib/cat-films.ts",
+      "bytes": 4180,
+      "sha256": "bdaa4aeb8c17092f6492aeb7f812e27d1595895094c0112b0a26bf1ec5f647bb",
+      "sha256Lf": "5b13d14d1d6e190f258f6dc91bcac62d9b99016d76ea78de172885305f475a14"
+    },
+    {
+      "file": "lib/creative-plan.ts",
+      "bytes": 2178,
+      "sha256": "52c053df2a8565ed4d5993545e3f30e6afafcab1c7c515f3ae479ea837312a92",
+      "sha256Lf": "52c053df2a8565ed4d5993545e3f30e6afafcab1c7c515f3ae479ea837312a92"
+    },
+    {
+      "file": "lib/examples.ts",
+      "bytes": 12758,
+      "sha256": "6040972e626c61423cd271b7711656394457ef9f6f9a5333c7263aec057e821e",
+      "sha256Lf": "6040972e626c61423cd271b7711656394457ef9f6f9a5333c7263aec057e821e"
+    },
+    {
+      "file": "lib/model-catalog.ts",
+      "bytes": 4588,
+      "sha256": "4e10cbb587ac1a436e1d595fe85adfa33035ed3fffd8203ba6cd65cf843d96ee",
+      "sha256Lf": "4e10cbb587ac1a436e1d595fe85adfa33035ed3fffd8203ba6cd65cf843d96ee"
+    },
+    {
+      "file": "lib/soundbrief.ts",
+      "bytes": 4225,
+      "sha256": "314f7956c52b7cb478c2eda2d71eafe55b0ae24b856e34184a9fda680245d12b",
+      "sha256Lf": "314f7956c52b7cb478c2eda2d71eafe55b0ae24b856e34184a9fda680245d12b"
+    },
+    {
+      "file": "next.config.ts",
+      "bytes": 104,
+      "sha256": "d063bebef3a4878ae82f9f9547c2c9675b8b6945ab23702932dcb63a011a9fc9",
+      "sha256Lf": "d063bebef3a4878ae82f9f9547c2c9675b8b6945ab23702932dcb63a011a9fc9"
+    },
+    {
+      "file": "package.json",
+      "bytes": 1120,
+      "sha256": "5d0bf45a1e3551855d7dad51197ac471e623820db557bfe7ff5aea626d2a83de",
+      "sha256Lf": "5d0bf45a1e3551855d7dad51197ac471e623820db557bfe7ff5aea626d2a83de"
+    },
+    {
+      "file": "pnpm-lock.yaml",
+      "bytes": 206084,
+      "sha256": "b6f06664ef5fb0fe59b2115614734ed80a4734e721dffed744b8ab87bc86fa54",
+      "sha256Lf": "b6f06664ef5fb0fe59b2115614734ed80a4734e721dffed744b8ab87bc86fa54"
+    },
+    {
+      "file": "pnpm-workspace.yaml",
+      "bytes": 156,
+      "sha256": "c14e27918d7f7b480d530abdcd15806946ac321fac68e4624bf0503af36181bf",
+      "sha256Lf": "c14e27918d7f7b480d530abdcd15806946ac321fac68e4624bf0503af36181bf"
+    },
+    {
+      "file": "public/favicon.svg",
+      "bytes": 712,
+      "sha256": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7",
+      "sha256Lf": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7"
+    },
+    {
+      "file": "public/media/CREDITS.md",
+      "bytes": 2423,
+      "sha256": "2f0419f9d0a7bd7370476aecf5b7c1817d8f6e20bdc3805fa451398bdaeb7843",
+      "sha256Lf": "2f0419f9d0a7bd7370476aecf5b7c1817d8f6e20bdc3805fa451398bdaeb7843"
+    },
+    {
+      "file": "public/media/animals/a.mp3",
+      "bytes": 721650,
+      "sha256": "96eb5c0d05261704346e1f2cdd8fffef820ca119b5a839c270b7699add3e1574"
+    },
+    {
+      "file": "public/media/animals/b.mp3",
+      "bytes": 721650,
+      "sha256": "00614a2def1e2ab148f4053c1055d318904d5843b32ab65b59ba0accbb5fd88a"
+    },
+    {
+      "file": "public/media/animals/film-a.mp4",
+      "bytes": 1817629,
+      "sha256": "c3fae58a50857a40d7010f8a58847ddbf8534e219f50f33b9098e89b666b5157"
+    },
+    {
+      "file": "public/media/animals/film-b.mp4",
+      "bytes": 1830799,
+      "sha256": "60cb76b3e81dff9f2e98eda9c3076d263c26c819fa09e10262e4427fd5491230"
+    },
+    {
+      "file": "public/media/animals/poster.jpg",
+      "bytes": 96024,
+      "sha256": "ef25e62bcba550a12d8631b9564dc71f9173dfca5ab86f248fac260c4c13ac98"
+    },
+    {
+      "file": "public/media/animals/video.mp4",
+      "bytes": 1116154,
+      "sha256": "d70ee6ff70180f5dd1f676f10d34fe8de5b5dad4f65c448079eaf10295f5ab5b"
+    },
+    {
+      "file": "public/media/animals/video.webm",
+      "bytes": 1857784,
+      "sha256": "7171966ebe1b4bc8354c49e76a3cb49589bf0475075ab9fd3fcce58f890ecaf6"
+    },
+    {
+      "file": "public/media/art/animals.png",
+      "bytes": 2143118,
+      "sha256": "7d920e33e3de290cb0d486f07cd0b79c8e8d078fc6729ea6ea2539d286e04e9b"
+    },
+    {
+      "file": "public/media/art/brand.png",
+      "bytes": 2080007,
+      "sha256": "e4ce569e42f829580019d832c8f803d19c7877773aabbd00db98fe5e58b4b4af"
+    },
+    {
+      "file": "public/media/art/daily.png",
+      "bytes": 2422102,
+      "sha256": "14145e91cff01c97727578099c39f563709f1993c09e299e955b17b6f7277446"
+    },
+    {
+      "file": "public/media/art/people.png",
+      "bytes": 2321708,
+      "sha256": "569f73c58e42f7a66b342cd4a4e2ebae74900a50a7101ed43490a72bacc5a3e7"
+    },
+    {
+      "file": "public/media/brand/a.mp3",
+      "bytes": 721650,
+      "sha256": "75665b8bf511caeb9e60deb1138ddf184c6c60f1652dfe46c6e3abf9dcb9e6ef"
+    },
+    {
+      "file": "public/media/brand/b.mp3",
+      "bytes": 721650,
+      "sha256": "ccca76cd499b9c171bc6375a89753a4838e325837b1b5d71e206fc06f2c3d5ae"
+    },
+    {
+      "file": "public/media/brand/film-a.mp4",
+      "bytes": 1798130,
+      "sha256": "831eb891c6f1cfe1d08954a44952cd94ff03d067043468f745af400d1352f4db"
+    },
+    {
+      "file": "public/media/brand/film-b.mp4",
+      "bytes": 1801454,
+      "sha256": "fea2def68b928b6df718a7609eb50777921d8c6da858b48024657118ce3db217"
+    },
+    {
+      "file": "public/media/brand/poster.jpg",
+      "bytes": 91189,
+      "sha256": "7f99968310236a2b886ab1a6e0edc5c9adacfe75c836ac17f783085cd305b05c"
+    },
+    {
+      "file": "public/media/brand/video.mp4",
+      "bytes": 1083035,
+      "sha256": "bd2801e0c668e3dd13f3baccac0f11f5915c3d1dd8ee18b7a2eb61a8c6deae67"
+    },
+    {
+      "file": "public/media/brand/video.webm",
+      "bytes": 1671672,
+      "sha256": "46ae125b3618ab0a25898a81dfaaf8b28429c02b9a48e76d01eb78ec8608a359"
+    },
+    {
+      "file": "public/media/cat-films/CREDITS.md",
+      "bytes": 1196,
+      "sha256": "dec6570ca43ce8884dcf6187a2faa071ca04403dd2c33e0246927edc9aa2fcfb",
+      "sha256Lf": "dec6570ca43ce8884dcf6187a2faa071ca04403dd2c33e0246927edc9aa2fcfb"
+    },
+    {
+      "file": "public/media/cat-films/cloud.jpg",
+      "bytes": 49949,
+      "sha256": "e8b9aa3aed4f5c18fcd01ac99f8a947c5b06e66c585fc5dc00bc212e23a3abfb"
+    },
+    {
+      "file": "public/media/cat-films/cloud.mp4",
+      "bytes": 1777781,
+      "sha256": "8bd54dcaead4fec45721cd1fab2bf774b8f1533de9a93d4e7963e279de1fe829"
+    },
+    {
+      "file": "public/media/cat-films/huajuan.jpg",
+      "bytes": 54587,
+      "sha256": "1d203687805338af7d59d72b9ee1a97f0e1f477c866336ec3fc0b0235b0ec2d8"
+    },
+    {
+      "file": "public/media/cat-films/huajuan.mp4",
+      "bytes": 1992670,
+      "sha256": "6c20b1e64a88d44b8841acb8750e566f7a0eb3e95fe515222a963557ca4da61b"
+    },
+    {
+      "file": "public/media/cat-films/mianmian.jpg",
+      "bytes": 67836,
+      "sha256": "b9db8b3a4fa6945f39716ef024a927b6afbad59cbdaefd58bb417c34b288d536"
+    },
+    {
+      "file": "public/media/cat-films/mianmian.mp4",
+      "bytes": 2324301,
+      "sha256": "8cd2d804ac20f9bdf28b25945810521308944a0c4b2de08961820b7b152ce543"
+    },
+    {
+      "file": "public/media/cat-films/mocha.jpg",
+      "bytes": 60894,
+      "sha256": "1cb6f8def10a7ea9796838f9104764d42d299068578278e75c7d65aee99d54e6"
+    },
+    {
+      "file": "public/media/cat-films/mocha.mp4",
+      "bytes": 2893193,
+      "sha256": "a65901ed2367316caedf75009edc957681a98235532431fbbea35e212baf1920"
+    },
+    {
+      "file": "public/media/cat-films/oreo.jpg",
+      "bytes": 42348,
+      "sha256": "756948a2b3708f3507daecaa3ec3a254f111c36e13ba9dcfe48204dcc94da2b9"
+    },
+    {
+      "file": "public/media/cat-films/oreo.mp4",
+      "bytes": 1858616,
+      "sha256": "7ce06d4531940df3878a29b34c18f2b61a76450ab881cac0c597bc02759183dd"
+    },
+    {
+      "file": "public/media/cat-films/songsong.jpg",
+      "bytes": 95869,
+      "sha256": "69b9d541c4c334f8b922f84ea3b5d50465a754c51ce5aacf4b30a7c2d4c17b63"
+    },
+    {
+      "file": "public/media/cat-films/songsong.mp4",
+      "bytes": 2704180,
+      "sha256": "afa547f56f7e278c03b111d515c9122b9ccc4356290cb18a6056b6b5923a0295"
+    },
+    {
+      "file": "public/media/companion/CAT-ROOMS.md",
+      "bytes": 1915,
+      "sha256": "deeffac4a44e811a066e158a50d2369d56a1fa6ad71b7b1266a9454a01ed730e",
+      "sha256Lf": "deeffac4a44e811a066e158a50d2369d56a1fa6ad71b7b1266a9454a01ed730e"
+    },
+    {
+      "file": "public/media/companion/README.md",
+      "bytes": 897,
+      "sha256": "027799166e55e34dec38959bd8c1d17f2ffb3be698d3a1df9553cc3c4f6d8aaf",
+      "sha256Lf": "027799166e55e34dec38959bd8c1d17f2ffb3be698d3a1df9553cc3c4f6d8aaf"
+    },
+    {
+      "file": "public/media/companion/calico-sheet.png",
+      "bytes": 1718897,
+      "sha256": "d6d1c109f7eb24a61821e5b161c64e858d8cbf2b68805ca24873656f640c221a"
+    },
+    {
+      "file": "public/media/companion/cloud-sheet.png",
+      "bytes": 1271171,
+      "sha256": "8445269c82a5593e6785f195bff0cf9985f85ef2c18cd515a57c53f2e628f7a9"
+    },
+    {
+      "file": "public/media/companion/maine-sheet.png",
+      "bytes": 1961029,
+      "sha256": "5c1018d831d19a94de439dd760b190a3267637fcacd4178be35b241c634b28f8"
+    },
+    {
+      "file": "public/media/companion/oreo-sheet.png",
+      "bytes": 1630368,
+      "sha256": "6a1fc2a281785345bfa81795776f39fb7df1db4e837f1ee77b506bd7db621f75"
+    },
+    {
+      "file": "public/media/companion/ragdoll-sheet.png",
+      "bytes": 1907468,
+      "sha256": "17dd805a35a0f573654f73cc7c773b4f0d325a6da5c66f8a9b7910221b1ed198"
+    },
+    {
+      "file": "public/media/companion/siamese-sheet.png",
+      "bytes": 1273268,
+      "sha256": "934d2168e399dce3b030e89aa5b006e8f2fe92e5ea2a1536647970735a04d548"
+    },
+    {
+      "file": "public/media/daily/a.mp3",
+      "bytes": 721650,
+      "sha256": "ae0f003a8f06c6a1d42640f67ff078450c634f61c450b0ef527b3c83c5bdbdae"
+    },
+    {
+      "file": "public/media/daily/b.mp3",
+      "bytes": 721650,
+      "sha256": "4de13d355d79263ca2b9f733994091eb9880a6c7e1399dad69db45389a51a168"
+    },
+    {
+      "file": "public/media/daily/film-a.mp4",
+      "bytes": 1878821,
+      "sha256": "2a9c5b6e5a3fe34f62fc04011b7df41b1169fcd59ddc1a457db10d2c772860a8"
+    },
+    {
+      "file": "public/media/daily/film-b.mp4",
+      "bytes": 1907374,
+      "sha256": "78d4e2439ca9943642b059da36359c9333651d2a14d0272a573f0ca5598e8f92"
+    },
+    {
+      "file": "public/media/daily/poster.jpg",
+      "bytes": 103569,
+      "sha256": "a3450812ba49d343f34df23cdaaa0d5cd99d5a77fbed9512fd116aef6b4793ce"
+    },
+    {
+      "file": "public/media/daily/video.mp4",
+      "bytes": 1165596,
+      "sha256": "b1364af8980973c54db47f52cee7d352e656edfb41b4fb1950d6d6e3ac7f6aaa"
+    },
+    {
+      "file": "public/media/daily/video.webm",
+      "bytes": 2033099,
+      "sha256": "3e82d55e00799d336ec44dfa0f2a447edeb54034c58def6e395564c9bede062c"
+    },
+    {
+      "file": "public/media/people/a.mp3",
+      "bytes": 721650,
+      "sha256": "08cd6cab3534f760ad0a16efca5be3cb7ae487858a47efdd1f6eda98e230f64f"
+    },
+    {
+      "file": "public/media/people/b.mp3",
+      "bytes": 721650,
+      "sha256": "e823fcb103b72b326214c1b3288526346dee3a73a6ccbd93135757ad290f403a"
+    },
+    {
+      "file": "public/media/people/film-a.mp4",
+      "bytes": 1838226,
+      "sha256": "02053a487749b621a4df083fd354bd201864b3aa383adc71ec73dc60c8a5e15f"
+    },
+    {
+      "file": "public/media/people/film-b.mp4",
+      "bytes": 1829591,
+      "sha256": "e3f42751792dcfc402399fa9a480b371b15bfe71b89007a9617c40ba44b75bbc"
+    },
+    {
+      "file": "public/media/people/poster.jpg",
+      "bytes": 92811,
+      "sha256": "c977b685206b93fd9d7ae062292cca48495b80f35fa8e8942b397a9da23499ec"
+    },
+    {
+      "file": "public/media/people/video.mp4",
+      "bytes": 1112837,
+      "sha256": "776797275901ade161699d7f240458977296ca2c0c30469bc1b039b204166836"
+    },
+    {
+      "file": "public/media/people/video.webm",
+      "bytes": 1720815,
+      "sha256": "79a51b06eb352c547c3d11af4220e797e11715187779ab51795ba239854a15a8"
+    },
+    {
+      "file": "public/og.png",
+      "bytes": 2048227,
+      "sha256": "9f0a8be81b2b11ba2b2ce6e53623e6f2417fb7e90779d10208d8d303b7f1861b"
+    },
+    {
+      "file": "public/soundbrief-social.png",
+      "bytes": 2048227,
+      "sha256": "9f0a8be81b2b11ba2b2ce6e53623e6f2417fb7e90779d10208d8d303b7f1861b"
+    },
+    {
+      "file": "scripts/create-demo-media.mjs",
+      "bytes": 9329,
+      "sha256": "0aada6edac006c51ec37cb67234b591bdf80abde06288ea00213a700d206c6a8",
+      "sha256Lf": "0aada6edac006c51ec37cb67234b591bdf80abde06288ea00213a700d206c6a8"
+    },
+    {
+      "file": "scripts/inspect-cat-films.mjs",
+      "bytes": 1721,
+      "sha256": "5618db5aa332606fdd0cc0b2412d86e5a2401cf97cebe3a89a84867a904ad27b",
+      "sha256Lf": "5618db5aa332606fdd0cc0b2412d86e5a2401cf97cebe3a89a84867a904ad27b"
+    },
+    {
+      "file": "scripts/optimize-cat-films.mjs",
+      "bytes": 1519,
+      "sha256": "da089b3987771307a76a16a6e04ad802609d7d162455e9611a69fb743b4ebea7",
+      "sha256Lf": "da089b3987771307a76a16a6e04ad802609d7d162455e9611a69fb743b4ebea7"
+    },
+    {
+      "file": "scripts/validate-demo-media.mjs",
+      "bytes": 1618,
+      "sha256": "3b7b2f35d3e1714fc3c69667f42bb6541099f70750f277ec76c04e195c203b97",
+      "sha256Lf": "3b7b2f35d3e1714fc3c69667f42bb6541099f70750f277ec76c04e195c203b97"
+    },
+    {
+      "file": "scripts/verify-project.mjs",
+      "bytes": 1455,
+      "sha256": "eda0e38907498f16c5a32af9f79a665cc4767f3be97051d16a9607fcbefbd9fd",
+      "sha256Lf": "eda0e38907498f16c5a32af9f79a665cc4767f3be97051d16a9607fcbefbd9fd"
+    },
+    {
+      "file": "tsconfig.json",
+      "bytes": 745,
+      "sha256": "360cf27de98f88ca3a9487d6610fb6610bd46252812679ab70c1b4a54008e987",
+      "sha256Lf": "360cf27de98f88ca3a9487d6610fb6610bd46252812679ab70c1b4a54008e987"
+    },
+    {
+      "file": "vite.config.ts",
+      "bytes": 1810,
+      "sha256": "0388f7be4819d7e40a8957c845ab1bbbcfde6e42cbfb506bfe55af7558a23c63",
+      "sha256Lf": "0388f7be4819d7e40a8957c845ab1bbbcfde6e42cbfb506bfe55af7558a23c63"
+    }
+  ]
+}

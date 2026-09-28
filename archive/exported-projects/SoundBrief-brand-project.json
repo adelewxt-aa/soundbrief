@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "title": "给画面一点魔法",
+  "source": "prepared-demo",
+  "exampleId": "brand",
+  "duration": 30,
+  "intent": "整体可爱，开头安静，10 秒产品出现时明显一点。",
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4,
+      "panel": 0,
+      "title": "画面有了，音乐呢？",
+      "caption": "一个小小的创作难题",
+      "visual": "小猫面对待配乐的视频，开场先让人看懂问题。",
+      "musicA": "只有轻拨弦，给字幕留白。",
+      "musicB": "电钢琴铺底，先不进鼓。",
+      "energyA": 22,
+      "energyB": 18,
+      "customMusicPlan": ""
+    },
+    {
+      "start": 4,
+      "end": 10,
+      "panel": 1,
+      "title": "把视频交给 SoundBrief",
+      "caption": "从画面开始，而不是从术语开始",
+      "visual": "小猫把视频放入工作台，故事开始推进。",
+      "musicA": "加入贝斯与沙锤，轻轻向前走。",
+      "musicB": "合成器脉冲渐入，建立期待。",
+      "energyA": 44,
+      "energyB": 40,
+      "customMusicPlan": ""
+    },
+    {
+      "start": 10,
+      "end": 16,
+      "panel": 2,
+      "title": "每个重点，都有节奏",
+      "caption": "先看懂，再安排音乐",
+      "visual": "画面和音符汇合，这是产品价值第一次被揭示。",
+      "musicA": "钟琴主旋律进入，10 秒点亮主峰。",
+      "musicB": "完整鼓组进入，和弦打开。",
+      "energyA": 85,
+      "energyB": 92,
+      "customMusicPlan": ""
+    },
+    {
+      "start": 16,
+      "end": 22,
+      "panel": 2,
+      "title": "两种感觉，亲耳比较",
+      "caption": "同一支视频，也能有两种表达",
+      "visual": "靠近音乐工作台的细节，展示 A/B 选择。",
+      "musicA": "保留旋律，减少鼓点密度。",
+      "musicB": "鼓点减半，为下一段蓄力。",
+      "energyA": 62,
+      "energyB": 55,
+      "customMusicPlan": ""
+    },
+    {
+      "start": 22,
+      "end": 27,
+      "panel": 3,
+      "title": "再可爱一点？没问题",
+      "caption": "用你的话，调整音乐的强弱",
+      "visual": "小猫戴上耳机，调整完成，情绪再次抬升。",
+      "musicA": "高八度短句回应，形成小高潮。",
+      "musicB": "鼓点回归，加一次明亮上行。",
+      "energyA": 78,
+      "energyB": 86,
+      "customMusicPlan": ""
+    },
+    {
+      "start": 27,
+      "end": 30,
+      "panel": 3,
+      "title": "SoundBrief",
+      "caption": "让音乐，懂你的画面。",
+      "visual": "品牌收尾，给名称和口号停留时间。",
+      "musicA": "鼓组退出，主和弦自然衰减。",
+      "musicB": "留下长和弦，不突然截断。",
+      "energyA": 18,
+      "energyB": 22,
+      "customMusicPlan": ""
+    }
+  ],
+  "selectedTrack": "a",
+  "mix": {
+    "opening": 0.45,
+    "peak": 1.4,
+    "ending": 0.35,
+    "peakAt": 10
+  },
+  "provenance": "预制动态插画与原创程序编曲；未调用在线音乐模型。"
+}

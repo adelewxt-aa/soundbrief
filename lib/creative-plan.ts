@@ -1,10 +1,4 @@
-export const providers = [
-  { id: "auto", name: "交给小猫匹配", note: "先记下偏好，接入后按实测效果和报价推荐。" },
-  { id: "eleven", name: "Eleven Music", note: "候选模型 · 等待接入与样片测试" },
-  { id: "minimax", name: "MiniMax Music", note: "候选模型 · 等待接入与样片测试" },
-  { id: "mureka", name: "Mureka", note: "候选模型 · 等待接入与样片测试" },
-  { id: "ace", name: "ACE-Step", note: "候选模型 · 等待部署与成本测试" },
-];
+export { providers } from "./model-catalog";
 export const directions = [
   { id:"fit", label:"A", name:"刚刚好", badge:"综合匹配方向", style:"温暖轻流行 · 吉他 / 轻打击乐", reason:"先服务画面重点，让开场有呼吸，在关键镜头适度抬升。", prompt:"温暖的纯音乐短视频配乐，柔和吉他与轻打击乐。开头稀疏，关键画面加强节奏，结尾自然淡出。避免喧宾夺主。" },
   { id:"mood", label:"B", name:"氛围再多一点", badge:"情绪优先方向", style:"氛围电子 · 钢琴 / 空间合成器", reason:"适合希望观众慢下来、感受故事的表达，留出环境声和旁白的空间。", prompt:"有呼吸感的氛围纯音乐，柔和钢琴、空间合成器、克制的鼓点。情绪缓慢推进，高潮温柔展开，结尾留白。" },

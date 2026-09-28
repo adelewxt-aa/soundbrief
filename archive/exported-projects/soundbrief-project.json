@@ -1,0 +1,95 @@
+{
+  "product": "SoundBrief",
+  "mode": "prototype",
+  "source": "sample-video.mp4",
+  "duration": 32,
+  "brief": {
+    "moods": [
+      "Playful",
+      "Premium",
+      "Energetic"
+    ],
+    "genre": "Electro Pop",
+    "bpm": 108,
+    "vocal": "Instrumental",
+    "instruments": [
+      "Soft Synth",
+      "Muted Bass",
+      "Light Percussion"
+    ],
+    "build": "4–12s gradual build",
+    "mainPeak": "12.4s Product Reveal",
+    "secondaryPeak": "24.8s Transition — stronger +18%",
+    "ending": "29–32s natural ending",
+    "version": 2
+  },
+  "selectedTrack": {
+    "id": "chrome-pulse",
+    "title": "Chrome Pulse",
+    "score": 94,
+    "duration": "0:32",
+    "bpm": 108,
+    "tags": [
+      "Polished",
+      "Electro pop",
+      "Tight sync"
+    ],
+    "reason": "12.4 秒主峰与产品揭示精准对齐，结尾也为 Logo 保留了呼吸感。",
+    "gradient": "linear-gradient(145deg,#8af4e4,#5f64ec 52%,#fa6d96)"
+  },
+  "timeline": [
+    {
+      "id": "hook",
+      "start": 0,
+      "end": 4,
+      "label": "Hook",
+      "note": "低能量开场",
+      "color": "#79b8ff"
+    },
+    {
+      "id": "build",
+      "start": 4,
+      "end": 12,
+      "label": "Build",
+      "note": "逐渐推进",
+      "color": "#8c7cff"
+    },
+    {
+      "id": "reveal",
+      "start": 12,
+      "end": 18,
+      "label": "Product Reveal",
+      "note": "12.4s 主峰",
+      "color": "#ff7657"
+    },
+    {
+      "id": "detail",
+      "start": 18,
+      "end": 24,
+      "label": "Details",
+      "note": "保持律动",
+      "color": "#f1aa4b"
+    },
+    {
+      "id": "transition",
+      "start": 24,
+      "end": 29,
+      "label": "Transition",
+      "note": "24.8s 次峰",
+      "color": "#e265bd"
+    },
+    {
+      "id": "ending",
+      "start": 29,
+      "end": 32,
+      "label": "Logo Ending",
+      "note": "自然收束",
+      "color": "#57b896"
+    }
+  ],
+  "matchReport": {
+    "score": 94,
+    "mainPeak": 12.4,
+    "secondaryPeak": 24.8
+  }
+}

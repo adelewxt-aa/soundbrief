@@ -10,8 +10,9 @@ export const catFilmUrl = (id: string) => `/media/cat-films/${id}.mp4`;
 export const sampleSteps = [
   { title: "选择视频", description: "案例与创作偏好", heading: "先看看，这是谁的故事。", help: "六支用户提供的预制短片，保留成片自带声音。也可以上传自己的视频。" },
   { title: "配乐计划", description: "看画面，记重点", heading: "哪一刻，最需要音乐？", help: "播放视频，填写实际画面与时间。下方是场景创作建议，不是自动分析结果。" },
-  { title: "模型与方向", description: "选择偏好与预算", heading: "先选感觉，再决定怎么做。", help: "这里只规划未来的模型选择，不调用 API、不扣费；不会改变示例成片。" },
+  { title: "模型与方向", description: "选择偏好与预算", heading: "找到更适合这支视频的模型。", help: "根据你填写的需求给出候选与费用预估。当前为规划体验，尚未分析视频或调用音乐模型，不扣费。" },
   { title: "试听比较", description: "成片与本地音乐", heading: "同一个画面，换一种感觉。", help: "当前每支只有一个成片版本。导入自己的音乐后，可以在相同位置切换比较。" },
   { title: "继续修改", description: "记录想法，调整音量", heading: "喜欢的留下，再调一点点。", help: "可以记录分段修改要求；导入独立音乐后可实际调整音量。局部重生成尚未接入。" },
   { title: "保存结果", description: "视频与创作计划", heading: "把这一版，带走。", help: "下载示例成片的网页播放版与创作计划；导入音乐的修改结果可导出 WAV，合成新视频需在剪辑工具完成。" },
 ];
+
